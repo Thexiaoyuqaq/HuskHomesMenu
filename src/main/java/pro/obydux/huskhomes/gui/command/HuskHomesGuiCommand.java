@@ -47,7 +47,8 @@ public class HuskHomesGuiCommand implements CommandExecutor, TabExecutor {
                 .credits("Author",
                         AboutMenu.Credit.of("William278").description("Click to visit website").url("https://william278.net"))
                 .credits("Contributors",
-                        AboutMenu.Credit.of("ApliNi").description("Code"))
+                        AboutMenu.Credit.of("ApliNi").description("Code"),
+                        AboutMenu.Credit.of("Obydux").description("Code"))
                 .credits("Translators",
                         AboutMenu.Credit.of("ApliNi").description("Simplified Chinese (zh-cn)"),
                         AboutMenu.Credit.of("Revoolt").description("Spanish (es-es)"),
@@ -55,9 +56,9 @@ public class HuskHomesGuiCommand implements CommandExecutor, TabExecutor {
                 .buttons(
                         AboutMenu.Link.of("https://william278.net/docs/huskhomes/gui-add-on")
                                 .text("About").icon("⛏"),
-                        AboutMenu.Link.of("https://github.com/WiIIiam278/HuskHomesGUI/issues")
+                        AboutMenu.Link.of("https://github.com/Obydux/Updated-HuskHomesGUI/issues")
                                 .text("Issues").icon("❌").color(TextColor.color(0xff0000)),
-                        AboutMenu.Link.of("https://discord.gg/tVYhJfyDWG")
+                        AboutMenu.Link.of("https://discord.gg/sQ6VmWDzN3")
                                 .text("Discord").icon("⭐").color(TextColor.color(0x6773f5)))
                 .build();
     }

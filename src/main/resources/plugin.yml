@@ -1,12 +1,12 @@
 name: HuskHomesGUI
 main: pro.obydux.huskhomes.gui.HuskHomesGui
 version: '${version}'
-description: '${description}'
-api-version: 1.17
+description: 'Display HuskHomes homes and warps in a GUI'
+api-version: 1.20
 depend: [ 'HuskHomes' ]
 folia-supported: true
 authors: ['William278', 'Obydux']
-website: 'https://github.com/Obydux'
+website: 'https://github.com/Obydux/Updated-HuskHomesGUI'
 
 commands:
   huskhomesgui:
