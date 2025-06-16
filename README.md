@@ -4,8 +4,8 @@
     <a href="https://github.com/Obydux/Updated-HuskHomesGUI/actions/workflows/java_ci.yml">
         <img src="https://img.shields.io/github/actions/workflow/status/Obydux/Updated-HuskHomesGUI/java_ci.yml?branch=master&logo=github"/>
     </a>
-    <a href="https://discord.gg/MC2BzcE3vx">
-        <img src="https://img.shields.io/discord/1263839827661557801.svg?label=&logo=discord&logoColor=fff&color=7389D8&labelColor=6A7EC2" />
+    <a href="https://discord.gg/sQ6VmWDzN3">
+        <img src="https://img.shields.io/discord/1383468620566237234.svg?label=&logo=discord&logoColor=fff&color=7389D8&labelColor=6A7EC2" />
     </a> 
     <br/>
     <b>
@@ -20,7 +20,7 @@
 </p>
 <br>
 
-**HuskHomesGUI** is a GUI add-on plugin for [HuskHomes v4.6+](https://github.com/WiIIiam278/HuskHomes) on Spigot servers. It provides a chest-style graphical user interface (GUI) for browsing home and warp lists as well as editing homes.
+**HuskHomesGUI** is a GUI add-on plugin for [HuskHomes v4.6.3+](https://github.com/WiIIiam278/HuskHomes) on Paper servers. It provides a chest-style graphical user interface (GUI) for browsing home and warp lists as well as editing homes.
 
 It replaces the chat menu system that is built into HuskHomes when you type `/homelist`, `/phomelist` or `/warplist` and includes anvil-based rename and description editing functionality to allow for easy editing.
 
@@ -29,7 +29,7 @@ It replaces the chat menu system that is built into HuskHomes when you type `/ho
 If you prefer to browse using a menu, or would like better support for Bedrock players connecting over Geyser, then this add-on is for you.
 
 ## Setup
-1. Have HuskHomes v4.6+ installed on your server(s)
+1. Have HuskHomes v4.6.3+ installed on your server(s)
 2. Download HuskHomesGUI and place it in your server's `~/plugins/` folder
 
 ## Usage
