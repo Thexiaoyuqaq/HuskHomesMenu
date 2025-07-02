@@ -1,8 +1,8 @@
 plugins {
     `java-library`
-    id("com.gradleup.shadow") version "9.0.0-beta16"
+    id("com.gradleup.shadow") version "9.0.0-beta17"
     id("org.cadixdev.licenser") version "0.6.1"
-    id("org.ajoberstar.grgit") version "5.3.0"
+    id("org.ajoberstar.grgit") version "5.3.2"
 }
 
 group = "pro.obydux"
@@ -22,9 +22,9 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.20.5-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.21.7-R0.1-SNAPSHOT")
     compileOnly("org.jetbrains:annotations:26.0.2")
-    compileOnly("net.william278.huskhomes:huskhomes-bukkit:4.9.7-d529f5f")
+    compileOnly("net.william278.huskhomes:huskhomes-bukkit:4.9.8-8bdffb6")
 
     implementation("de.themoep:inventorygui:1.6.5-SNAPSHOT")
     implementation("org.apache.commons:commons-text:1.13.1")
@@ -34,8 +34,8 @@ dependencies {
     implementation("net.william278:annotaml:2.0.7-4f14c61")
     implementation("net.william278:desertwell:2.0.4")
 
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.13.1")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.13.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.13.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.13.2")
 }
 
 tasks.compileJava {
