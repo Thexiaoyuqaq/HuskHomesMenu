@@ -147,6 +147,10 @@ public class EditMenu<T extends SavedPosition> extends Menu {
                                     .onClick((slot, stateSnapshot) -> {
                                         if (slot == AnvilGUI.Slot.OUTPUT) {
                                             if (stateSnapshot.getText() != null) {
+                                                if (stateSnapshot.getText().equals(position.getName())) {
+                                                    this.show(api.adaptUser(player));
+                                                    return List.of();
+                                                }
                                                 try {
                                                     if (position instanceof Home home) {
                                                         api.renameHome(home, stateSnapshot.getText());
@@ -224,12 +228,35 @@ public class EditMenu<T extends SavedPosition> extends Menu {
                         new ItemStack(plugin.getSettings().getEditorEditPrivacyButtonIcon()),
                         (click) -> {
                             if (click.getWhoClicked() instanceof Player player) {
+                                if (!home.isPublic()) {
+                                    api.getUserPublicHomes(api.adaptUser(player)).thenAccept(publicHomes -> {
+                                        int userPublicHomesCount = publicHomes.size();
+                                        int maxPublicHomesAllowed = api.getMaxPublicHomeSlots(api.adaptUser(player));
+
+                                        if (userPublicHomesCount >= maxPublicHomesAllowed) {
+                                            player.sendMessage(plugin.getLocales().getLocale("max_public_homes_reached"));
+                                            return;
+                                        }
+
+                                        try {
+                                            api.setHomePrivacy(home, true);
+                                            home.setPublic(true);
+                                            this.show(api.adaptUser(player));
+                                        } catch (ValidationException e) {
+                                            player.sendMessage(e.getMessage());
+                                        }
+                                    });
+
+                                    return true;
+                                }
+
                                 try {
-                                    api.setHomePrivacy(home, !home.isPublic());
+                                    api.setHomePrivacy(home, false);
                                     // Update the status display on the menu
-                                    home.setPublic(!home.isPublic());
+                                    home.setPublic(false);
                                     this.show(api.adaptUser(player));
                                 } catch (ValidationException e) {
+                                    player.sendMessage(e.getMessage());
                                     return true;
                                 }
                             }
