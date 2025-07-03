@@ -24,7 +24,7 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.7-R0.1-SNAPSHOT")
     compileOnly("org.jetbrains:annotations:26.0.2")
-    compileOnly("net.william278.huskhomes:huskhomes-bukkit:4.9.8-8bdffb6")
+    compileOnly("net.william278.huskhomes:huskhomes-bukkit:4.9.9-dcf38e6")
 
     implementation("de.themoep:inventorygui:1.6.5-SNAPSHOT")
     implementation("org.apache.commons:commons-text:1.13.1")
