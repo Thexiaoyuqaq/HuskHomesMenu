@@ -149,16 +149,17 @@ public class Locales {
      * @throws NullPointerException if the string is null
      */
     public static String textWrap(@NotNull HuskHomesGui plugin, @NotNull String string) {
-        // ([\x00-\xFF]{1,2}|.?){27}
-        Matcher matcher = Pattern.compile("([\\x00-\\xFF]{1,2}|.?){"+ plugin.getSettings().getTextWrapLength() +"}").matcher(string);
+        int wrapLength = plugin.getSettings().getTextWrapLength();
+        Matcher matcher = Pattern.compile("([\\x00-\\xFF]{1,2}|.?){" + wrapLength + "}").matcher(string);
         StringBuilder out = new StringBuilder();
 
         while (matcher.find()) {
-            if (!matcher.group().trim().isEmpty()) {
-                out.append(plugin.getLocales().getLocale("item_description_line_style", matcher.group().trim()));
+            String group = matcher.group().trim();
+            if (!group.isEmpty()) {
+                out.append(plugin.getLocales().getLocale("item_description_line_style", group));
             }
         }
-        return String.valueOf(out);
+        return out.toString();
     }
 
 }

@@ -285,6 +285,7 @@ public class EditMenu<T extends SavedPosition> extends Menu {
                                             warp.getMeta().setName(plugin.getLocales().getLocale("item_deleted_name", warp.getName())); // update listMenu
                                         }
                                     } catch (ValidationException e) {
+                                        player.sendMessage(plugin.getLocales().getLocale("error_validation", e.getMessage()));
                                         return true;
                                     }
 

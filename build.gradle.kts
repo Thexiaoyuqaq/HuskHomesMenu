@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "pro.obydux"
-version = "${extra["plugin_version"]}${versionMetadata()}"
+version = "${extra["plugin_version"]}"
 
 repositories {
     mavenCentral()
@@ -24,7 +24,7 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.7-R0.1-SNAPSHOT")
     compileOnly("org.jetbrains:annotations:26.0.2")
-    compileOnly("net.william278.huskhomes:huskhomes-bukkit:4.9.9-dcf38e6")
+    compileOnly("net.william278.huskhomes:huskhomes-bukkit:4.9.9-539a151")
 
     implementation("de.themoep:inventorygui:1.6.5-SNAPSHOT")
     implementation("org.apache.commons:commons-text:1.13.1")
@@ -91,21 +91,3 @@ license {
 
 logger.lifecycle("Building HuskHomesGUI ${version} by William278 & Obydux")
 
-@SuppressWarnings("GrMethodMayBeStatic")
-fun versionMetadata(): String {
-    // Get if there is a tag for this commit
-    val tag = grgit.tag.list().find { it.commit.id == grgit.head().id }
-    if (tag != null) {
-        return ""
-    }
-
-    // Otherwise, get the last commit hash and if it's a clean head
-    if (grgit == null) {
-        val runNumber = System.getenv("GITHUB_RUN_NUMBER")
-        return "-" + if (runNumber != null) "build.$runNumber" else "unknown"
-    }
-
-    val headId = grgit.head().abbreviatedId
-    val isClean = grgit.status().isClean()
-    return "-$headId" + if (isClean) "" else "-indev"
-}

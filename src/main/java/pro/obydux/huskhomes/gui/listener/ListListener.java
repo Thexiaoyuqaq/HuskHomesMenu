@@ -49,10 +49,9 @@ public class ListListener implements Listener {
             menu = ListMenu.publicHomes(plugin, event.getHomes());
         } else {
             menu = ListMenu.homes(plugin, event.getHomes(),
-                    event.getHomes().stream()
-                            .findFirst()
-                            .map(Home::getOwner)
-                            .orElse(onlineUser));
+                    event.getHomes().isEmpty()
+                            ? onlineUser
+                            : event.getHomes().get(0).getOwner());
         }
         menu.show(onlineUser);
     }
