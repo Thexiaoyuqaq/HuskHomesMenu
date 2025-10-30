@@ -26,7 +26,7 @@ jobs:
           arguments: build
       - name: Query Version
         run: |
-          echo "::set-output name=VERSION_NAME::$(${{github.workspace}}/gradlew properties --no-daemon --console=plain -q | grep "^version:" | awk '{printf $2}')"
+          echo "::set-output name=VERSION_NAME::$(./gradlew properties --no-daemon --console=plain -q | grep "^version:" | awk '{printf $2}')"
         id: fetch-version
       - name: Get Version
         run: |
@@ -36,3 +36,4 @@ jobs:
         with:
           name: HuskHomesGUI Plugin
           path: target/HuskHomesGUI-*.jar
+          retention-days: 30  
